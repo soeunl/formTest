@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        #form{
+            width: 500px;
+            border: 1px solid gray;
+            margin: 200px auto;
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+        form h1{
+            font-size: 12px;
+            padding: 20px;
+            align-self: flex-start;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            border: 1px solid gray;
+            width: 300px;
+            height: 40px;
+        }
+        input[type="text"]{
+            border-radius: 5px 5px 0 0;
+            border-bottom: 0;
+            background-image: url(./images/bx-user.svg);
+            background-repeat: no-repeat;
+            background-position: center left;
+            text-indent: 2em;
+        }
+        input[type="password"]{
+            border-radius: 0 0 5px 5px;
+            background-image: url(./images/bx-lock.svg);
+            background-repeat: no-repeat;
+            background-position: center left;
+            text-indent: 2em;
+        }
+        #loginBtn{
+            width: 300px;
+            height: 40px;
+            background-color: rgb(53, 194, 53);
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #form>div:nth-of-type(3){
+            margin-bottom: 30px;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #loginState {
+            display: none;
+        }
+
+        #loginState + label{
+            font-size: 12px;
+            background-image: url(./images/bg_checkbox.gif);
+            background-repeat: no-repeat;
+            background-size: 14px;
+            background-position: 0 2px;
+
+            display: block;
+            text-indent: 1.5em;
+        }
+
+        #loginState:checked + label{
+            background-position: 0 -14px;
+        }
+
+        #IP+div{
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 30px;
+        }
+
+        #IP + div::after{
+            content: "IP보안";
+            position: absolute;
+            transform: translate(-45px, -13px);
+            font-size: 14px;
+        }
+
+        #IP + div > label{
+            background-color: green;
+            width: 10px;
+            height: 10px;
+            display: block;
+            border-radius: 10px;
+            font-size: 0;
+            transform: translate(2px, 2px);
+        }
+
+        #IP:checked + div > label{
+            transform: translate(22px, 2px);
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <h1>로그인</h1>
+         <div>
+        <!-- <label for="userid">아이디</label> -->
+        <input type="text" 
+            id="userid" 
+            placeholder="아이디" 
+            class="userid" 
+            name="userid"/>
+        </div>
+        <div>
+            <!-- <label for="userpwd">비밀번호</label> -->
+            <input type="password" 
+                id="userpwd" 
+                placeholder="비밀번호" 
+                class="userpwd" 
+                name="userpwd"/>
+            </div>
+            <div>
+                <!-- switch 레이아웃을 좀더 사용성이 좋게 변경할 필요가 있다 -->
+                <div>
+                <input type="checkbox" id="loginState"/>
+                <label for="loginState">로그인 상태 유지</label></div>
+
+                
+                <input type="checkbox" id="IP"/>
+                <div>
+                <label for="IP">IP보안</label></div>
+            </div>
+        <div>
+            <input type="submit" value="로그인" id="loginBtn"/>
+            <!--  <input type="reset" value="취소"/> -->
+        </div>
+    </form>
+    <!-- form : 영역을 나누는 공간 아니라 화면을 갱신하는 기능 -->
+    <script>
+        const form = document.querySelector("#form");
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            // 화면을 갱신하는 기능을 차단
+        })
+
+        const loginBtn = document.querySelector("#loginBtn");
+        // 이벤트 핸들러 : 이벤트를 처리하는 함수(기능)
+        loginBtn.addEventListener("click", function()
+        {console.log("click");
+        const userid = document.querySelector("#userid");
+        console.log(userid.value);
+        const userpwd = document.querySelector("#userpwd");
+        console.log(userpwd.value);
+
+        const userINfo = {
+            userid: userid.value,
+            userpwd: userpwd. value
+        };
+
+        console.log(userINfo);
+        });
+        // 어떤 일을 처리하는 것을 만든다.
+        
+    </script>
+    <script>
+       // javascript 사용하는 이유
+       // backend(java, 파이썬..) 화면처리는 (html, css, javascript) 해야함
+       // nodejs : backend 처리도 가능
+       // jQuery, Ract, vue, angular 라이브러리 또는 프레임워크
+       // 반복된 처리
+       // 크로스브라우징(어떤 브라우저로 열어도 동일한 UI를 제공하는 것을 목표)
+       // 연산자, 처리문법 .... 
+    </script>
+</body>
+</html>

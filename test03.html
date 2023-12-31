@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        input[id]{
+            background-color: palevioletred;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        input[name="userid"]{
+            padding: 10px;
+        }
+        input[class]{
+            border: 2px solid black;
+        }
+        input::placeholder{
+            color: white;
+        }
+        input:focus{
+            background-color: lavender;
+        }
+        .userin{}
+        #form{}
+    </style>
+    <script></script>
+</head>
+<body>
+    <h1>javascript</h1>
+    <form action="" id="form">
+         <div>
+        <label for="userid">아이디</label>
+        <input type="text" 
+            id="userid" 
+            placeholder="아이디" 
+            class="userid" 
+            name="userid"/>
+        </div>
+        <div>
+            <input type="submit" value="등록"/>
+        </div>
+    </form>
+    <script>
+        // javascript 사용한다
+        // 1. 순수한 javascript 언어를 사용한다.(vanilla script)
+        // 2. webAPI 사용한다. : window.document 도구
+        // 3. ES(ECMA script) : es5, es6(React, nodejs), es12 버전
+
+        // window.alert("hello");
+        // 보통 window는 생략하고 사용
+
+        window.document.write('한글은 아름다운')
+        // document 는 body 태그로 이해한다
+
+        /// jacascript로 선택자 선택하는 방법
+        document.getElementsByTagName("h1")[0].style.color = "red";
+        // 태그 선택자는 중복 사용 가능하므로 반드시 번호가 붙어야 한다
+        document.getElementById("form").style.border = "1px solid black";
+        document.getElementById("form").style.padding = "10px";
+        /// id 선택자는 유일하게 사용하는 것으로 번호 필요 없음
+
+        document.getElementsByClassName("userid").style.borderWidth = "10px";
+        document.getElementsByName("userid")
+
+        // css 선택자와 같음
+        document.querySelector("h1");
+        document.querySelector("#form");
+        document.querySelector(".userid");
+        // 단일 선택자 : 여러 개가 있어도 첫번째 것만 선택
+
+        // 배열 선택자 : 여러개 선택, 번호 필요
+        document.querySelectorAll("div");
+    </script>
+</body>
+</html>

@@ -23,14 +23,15 @@
         input:focus{
             background-color: lavender;
         }
+        .userin{}
+        #form{}
     </style>
     <script></script>
-    <script defer src="./script/script.js"></script>
 </head>
 <body>
     <h1>javascript</h1>
     <form action="" id="form">
-         <div><!--onclick="alert('hello')"-->
+         <div>
         <label for="userid">아이디</label>
         <input type="text" 
             id="userid" 
@@ -43,12 +44,27 @@
         </div>
     </form>
     <script>
-        // 브라우저가 웹처리 하는 방식
-        // html(구조를 만들고) > css(디자인) : 파싱
-        // 중간에 js를 만나면 파싱을 멈추고 js를 실행해버림 : 화면에 뜨지 않으므로 느려짐
-        // header : script 추가 -> 되긴 하지만 느려짐
-        // script를 body에 추가하면 파싱 모두 처리한 후 js 처리
-        // header에 추가해서 파싱처리가 모두 끝난 다음에 js를 처리하게 하는 예약어 defer, async
+       // 변수 : 메모리상의 저장소
+
+       // 변수 선언하는 방법 3가지
+       // 1. var 변수명 (영문자+숫자) = 값
+       var elh1 =  document.querySelector("h1");
+       elh1.style.color = "yellow";
+       // 하지만 var 지정하는 것은 옛날 방식이다. : 오류 발생 확률이 높은 방식
+
+       // ES5 이후 방식
+       let label = document.querySelector("label");
+       label.style.background = "green";
+
+       const KEY = ""
+
+       //번수명 만드는 규칙
+       //영문자+숫자+_$
+       //특수문자는 사용할 수 없음
+       //대소문자 구분
+       //let ali; let APT; let Api; 모두 다른 것이다
+
+       
     </script>
 </body>
 </html>
