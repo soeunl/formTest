@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <style>
+        input[id]{
+            background-color: palevioletred;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        input[name="userid"]{
+            padding: 10px;
+        }
+        input[class]{
+            border: 2px solid black;
+        }
+        input::placeholder{
+            color: white;
+        }
+        input:focus{
+            background-color: lavender;
+        }
+        input:blur{}
+    </style>
+</head>
+<body>
+    <h1>사용자가 데이터를 처리하기 위한 방법</h1>
+    <form action="" id="form">
+        <div>
+        <label for="userid">아이디</label>
+        <input type="text" 
+            id="userid" 
+            placeholder="아이디" 
+            class="userid" 
+            name="userid"/>
+        </div>
+        <div>
+        <label for="userpwd">비밀번호</label>
+        <input type="password" 
+            id="userpwd" 
+            placeholder="비밀번호" 
+            class="userpwd" 
+            name="userpwd"/>
+        </div>
+        <div>
+            <!-- 텍스트 상자와 모양은 같으나 email 유효성 검사를 자동으로 함 -->
+        <label for="useremail">email</label>
+        <input type="email" 
+            id="useremail" 
+            placeholder="email@domain.com" 
+            class="useremail" 
+            name="useremail"/>
+        </div>
+        <div>
+            <!-- search 타입은 지우기 버튼이 지원됨, 모바일에서 처리 -->
+            <label for="search">search</label>
+            <input type="search" 
+                id="search" 
+                placeholder="search"/>
+            </div>
+        <div>
+            <!-- 문자는 입력안, 모바일 : 숫자키패드로 변경됨 -->
+            <label for="number">number</label>
+            <input type="number" 
+                id="number" 
+                placeholder="전화번호를 입력하세요"/>
+            </div>
+        <div>
+            <!-- 여러개 버튼 중 1개 선택할 때 -->
+            <!-- label을 뒤에 붙인다 -->
+            <p>과목을 선택하세요.(단, 한 과목만 선택가능)</p>
+            <input type="radio" id="html" name="subject"/>
+            <label for="html">html</label>
+            <input type="radio" id="css" name="subject"/>
+            <label for="css">css</label>
+            <input type="radio" id="javascript" name="subject"/>
+            <label for="javascript">javascript</label>
+            <input type="radio" id="nodejs" name="subject"/>
+            <label for="nodejs">nodejs</label>
+            </div>
+            <div>
+                <!-- 중복선택이 가능할 때 checkbox 사용 -->
+                <fieldset style="padding: 5px">
+                    <legend style="padding: 5px">좋아하는 과일을 선택하세요</legend>
+                    <input type="checkbox" id="apple"/>
+                    <label for="apple">사과</label>
+                    <input type="checkbox" id="fineapple"/>
+                    <label for="fineapple">파인애플</label>
+                    <input type="checkbox" id="banana"/>
+                    <label for="banana">바나나</label>
+                </fieldset>
+            </div>
+            <div>
+                <input type="color">
+            </div>
+            <div>
+                <input type="date">
+            </div>
+            <div>
+                <input type="file">
+            </div>
+            <div>
+                <input type="range" min="0" max="10" value="1"/>
+            </div>
+            <div>
+                <!-- 텍스트 입력과 차이는 없지만 알아서 전화번호라고 인식이 된다.
+                     전화번호를 사용하고 있다는 정확한 표시를 한다 -->
+                <input type="tel"/>
+            </div>
+            <div>
+                <!-- 텍스트 입력과 차이는 없지만 url을 사용하고 있다는 정확한 표시를 한다 -->
+                <input type="url"/>
+            </div>
+            <div>
+                <!-- 사용자와 상관없이 처리해야 하는 데이터 사용시 -->
+                <input type="hidden"/>
+            </div>
+            <div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="200자 이내 후기를 작성해주세요"></textarea>
+            </div>
+            <div>
+                <!-- 한개 처리할 때 -->
+                <select name="" id="">
+                    <option value="">한국</option>
+                    <option value="">일본</option>
+                    <option value="">중국</option>
+                </select>
+                <!-- list 항목 처리 -->
+                <select name="" id="" size="5" multiple>
+                    <option value="" selected>한국</option>
+                    <option value="">일본</option>
+                    <option value="">중국</option>
+                </select>
+            </div>
+        <div>
+            <!-- 입력한 데이터를 action 처리된 서버로 보낸다 -->
+            <input type="submit" value="등록"/>
+            <input type="reset" value="취소"/>
+            <!-- 입력한 데이터를 지우기 -->
+            <input type="button" value="button"/>
+            <!-- 다양한 용도로 사용할 수 있는 버튼 -->
+            <button>버튼</button>
+            <a href="http://www.naver.com">naver</a>
+        </div>
+    </form>
+</body>
+</html>
